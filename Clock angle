@@ -27,6 +27,7 @@ public class Main {
     if(min[i] == 60)
     min[i] = 0;
     
+    //Calculate the angles moved by hour and minute hands with reference to 12 : 00
     hour_angle[i] = (int)(0.5 * (hour[i]*60 + min[i]));
     min_angle[i] = (int)(6 * min[i]);
     
