@@ -6,28 +6,42 @@ public class Main {
     
     //write your code here
     Scanner sc = new Scanner(System.in);
-    int T = sc.nextInt();
-    
-    int Vote[] = new int[T];
-    
-    String result = "hard";
-    
-    for(int i = 0 ; i < T ; i++){
-      Vote[i]=sc.nextInt();
-      }
+   
+   int T = sc.nextInt();
   
-    for(int j = 0 ; j < T ; j++){
-      
-      if(Vote[j]==1){
-         break;
+   int Vote[] = new int[T];
+   
+   int count=0;
+   String result[] = new String[T];
+   
+   for(int i = 0 ; i < T ; i++){
+     Vote[i]=sc.nextInt();
+     
+    
+     
+     int Value[] = new int[Vote[i]];
+    
+    for(int j = 0 ; j < Vote[i] ; j++){
+     Value[j] = sc.nextInt();
+    
+      if(Value[j]==1){
+        result[j] = "hard";
+        break;
       }
       
-      }
-     if(result.equals("hard"))
-     System.out.println(result);
-     else
-     System.out.println("easy");
- 
- 
+      else{
+       
+        count++;
+        if(count == Vote[i])
+        result[j] = "easy";
+        else
+        continue;
+      }  
     }
-  }
+   }
+
+   for(int k=0;k<T;k++)
+   System.out.println(result[k]);
+   
+    }
+}
