@@ -5,23 +5,30 @@ public class Main {
   public static void main(String args[]) {
     
     //write your code here
+    import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) {
+    
+    //write your code here
     Scanner sc = new Scanner(System.in);
    
    int T = sc.nextInt();
   
-   int Vote[] = new int[T];
+   int N[] = new int[T];
    
-   int count=0;
+   
    String result[] = new String[T];
    
    for(int i = 0 ; i < T ; i++){
-     Vote[i]=sc.nextInt();
-     
+     N[i]=sc.nextInt();
     
+    int count = 0;
      
-     int Value[] = new int[Vote[i]];
+    int Value[] = new int[N[i]];
     
-    for(int j = 0 ; j < Vote[i] ; j++){
+    for(int j = 0 ; j < N[i] ; j++){
      Value[j] = sc.nextInt();
     
       if(Value[j]==1){
@@ -31,8 +38,8 @@ public class Main {
       
       else{
        
-        count++;
-        if(count == Vote[i])
+        count = count + 1;
+        if(count == N[i])
         result[j] = "easy";
         else
         continue;
@@ -42,6 +49,11 @@ public class Main {
 
    for(int k=0;k<T;k++)
    System.out.println(result[k]);
+   
+    }
+}
+  
+
    
     }
 }
