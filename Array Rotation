@@ -6,42 +6,36 @@ public class Main {
     
     //write your code here
     Scanner sc = new Scanner(System.in);
-    int t = sc.nextInt();
+    int T = sc.nextInt();
     
-    while(t-- > 0){
+    while(T-- > 0){
+      
+      int n = sc.nextInt();
+      
+      int k = sc.nextInt();
+      
+      int length = sc.nextInt();
+      
+      int A[] = new int[length];
+      
+      int temp = 0;
+      for(int i = 0 ; i < length ; i++){
+        A[i] = sc.nextInt();
+      }
     
-    int nspace = sc.nextInt();
-    int size = sc.nextInt();
-    int k = sc.nextInt();
-    
-    int array[] = new int[size];
-    
-    
-    for(int i = 0; i < size ; i++){
-    array[i] = sc.nextInt();  
-    }
-    
-     for(int i = 0; i < k; i++){    
-            int j, last;    
-            //Stores the last element of array    
-            last = array[size-1];    
-            
-            for(j = size-1; j > 0; j--){    
-                //Shift element of array by one    
-                array[j] = array[k];    
-            }    
-            //Last element of array will be added to the start of array.    
-            
-            array[0] = last;    
-        }    
+    for(int i = 0 ; i < k ; i++){
+      for(int j = A.length - 1 ; j > 0 ; j--){
         
-        //System.out.println();    
-            
-            
-        for(int i = 0; i < size; i++){    
-            System.out.print(array[i] + " ");    
-    
-        }
+        temp = A[j];
+        A[j]=A[j-2];
+        A[j-2]=temp;
+        
+      }
+    }
+      for(int m = 0 ; m < length ; m++)
+      System.out.print(A[m]);
+      
+   
     }
   }
 }
