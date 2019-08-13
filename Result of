@@ -28,10 +28,11 @@ public class Main {
         inputnumber[y] = sc.nextInt();
       }
       
+      count = 0;
       
       for(int y=0 ; y<size ;y++){
      
-       count = 0;
+       
       if(inputnumber[y] == 0){
       count = count + 1;
       
