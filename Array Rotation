@@ -8,34 +8,50 @@ public class Main {
     Scanner sc = new Scanner(System.in);
     int T = sc.nextInt();
     
-    while(T-- > 0){
-      
-      int n = sc.nextInt();
-      
-      int k = sc.nextInt();
-      
-      int length = sc.nextInt();
-      
-      int A[] = new int[length];
-      
-      int temp = 0;
-      for(int i = 0 ; i < length ; i++){
-        A[i] = sc.nextInt();
-      }
-    
-    for(int i = 0 ; i < k ; i++){
-      for(int j = A.length - 1 ; j > 0 ; j--){
-        
-        temp = A[j];
-        A[j]=A[j-2];
-        A[j-2]=temp;
-        
-      }
-    }
-      for(int m = 0 ; m < length ; m++)
-      System.out.print(A[m]);
-      
+    while(T-- > 0) {
    
+    int length = sc.nextInt();
+    
+    int k = sc.nextInt();
+    
+    if(k > length)
+      k=k%length;
+    
+    
+    int arr[] = new int[length];
+    
+    for(int i = 0 ; i < length ; i++){
+      arr[i] = sc.nextInt();
+    }
+    
+    Main obj = new Main();
+    
+    obj.rightRotate(arr, k , length);
+    obj.printArray(arr, length);
+    
     }
   }
+    
+    void rightRotate(int arr[], int d, int length){
+      reverseArray(arr, 0 , length - 1);
+      reverseArray(arr, 0 , d - 1);
+      reverseArray(arr, d , length - 1);
+      
+    }
+    
+    void reverseArray(int arr[], int start, int end){
+      while(start < end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+      }
+    }
+    
+    void printArray(int arr[], int size){
+      for(int i = 0 ; i < size ; i++)
+      System.out.print(arr[i] + " ");
+    }
+    
 }
