@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) {
+    
+    //write your code here
+    Scanner sc = new Scanner(System.in);
+    
+    int T = sc.nextInt();
+     
+     while(T-- > 0){
+      
+      int length = sc.nextInt();
+      
+      int arr[] = new int[length];
+      
+      for(int i = 0 ; i < length ; i++){
+        arr[i] = sc.nextInt();
+      }
+      
+      int total =(length + 1)  *  (length + 2) / 2;
+      
+      for(int i = 0 ; i < length ; i++)
+      total -= arr[i];
+      System.out.println(total);
+    }
+  }
+}
+
+  
