@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) {
+    
+    //write your code here
+    Scanner sc = new Scanner(System.in);
+    int T = sc.nextInt();
+    
+    while(T-- > 0){
+      
+      int size = sc.nextInt();
+      int arr[] = new int[size];
+      
+      
+      for(int i = 0 ; i < size ; i++){
+        int j;
+        for(j=i+1 ; j < size ; j++){
+          if(arr[i] < = arr[j])
+            break;
+        }
+      
+        if(j == size)
+        System.out.println(arr[i]);
+      }
+    
+      
+    }
+  }
+}
