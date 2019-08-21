@@ -5,50 +5,50 @@ public class Main {
   public static void main(String args[]) {
     
     //write your code here
-    Scanner sc = new Scanner(System.in);
-    int T = sc.nextInt();
-    
-    
-    while(T-- > 0){
+     Scanner sc = new Scanner(System.in);
+     int T = sc.nextInt();
    
-    int count = 0;
-    int countev = 0;
-    
-    int number = sc.nextInt();
-    
-    
-    int number_dup = number;
+   while(T-- > 0){
    
-    while(number > 0)
-    {
-      count = count + 1;
-      number/=10;
-    }  
-    
-    
-    int arr[] = new int [count];
-    
-    
-    for(int i=0 ; i < count ; i++){
-      while(number_dup > 0){
-        arr[i] = number_dup%10;
-        number_dup/=10;
-     } 
-    }
-    
-    Arrays.sort(arr);
-    
-    for(int i=1; i < count ; i++){
-      if(arr[i] - arr[i-1] == 1 )
-        countev = countev+1;
-      
-    }
-    
-    
-    if((countev+1) == count)
-      System.out.println("YES");
-      else
-      System.out.println("NO");
-    }
+   int count = 0;
+   int countev = 0;
+   
+   int number = sc.nextInt();
+  
+   int number_dup = number;
+   
+   int k = 0;
+   
+   while(number > 0)
+   {
+     count = count + 1;
+     number/=10;
+   }
+   
+   int arr[] = new int [count];
+   
+  while(number_dup > 0){
+    int rem = number_dup%10;
+    number_dup/=10;
+    arr[k] = rem;
+    k++;
   }
+      
+      Arrays.sort(arr);
+      
+      for(int i=1; i < count ; i++){
+     if(arr[i] - arr[i-1] == 1 )
+       countev = countev+1;
+   }
+    
+      if((countev+1) == count)
+     System.out.println("YES");
+     else
+     System.out.println("NO");
+   
+   
+   
+   }
+ }
 }
+  
