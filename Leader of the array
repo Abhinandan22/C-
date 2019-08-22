@@ -1,0 +1,39 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) {
+    
+    //write your code here
+    Scanner sc = new Scanner(System.in);
+    int T = sc.nextInt();
+    
+    while(T-- > 0)
+     { 
+      int size = sc.nextInt();
+      
+      int arr[] = new int[size];
+      
+      for(int k = 0 ; k < size; k++){
+        arr[k] = sc.nextInt();
+      }
+      
+      int max_from_right = arr[size-1];
+      
+      System.out.print(max_from_right + " ");
+      
+     
+      for(int i = size-2 ; i >=0 ; i--)
+      {
+        if(max_from_right < arr[i]){
+          max_from_right = arr[i];
+          System.out.print(max_from_right + " ");
+        }
+      }
+      
+      System.out.println();
+    
+      
+      }  
+   }
+}
