@@ -1,7 +1,7 @@
 public class MyClass {
     public static void main(String args[]) {
      
-      int arr[] = [13,78,56,44,55,66,99];
+      int arr[] = {13,78,56,44,55,66,99};
       
       int postsum = 0;
       
@@ -11,19 +11,19 @@ public class MyClass {
       
       int prefix [] = new int[arr.length];
       
-      for(int i = 0 ; i < length ; i++){
+      for(int i = 0 ; i < arr.length ; i++){
           
           postsum+=arr[i];
           
-          suffix[i] = sum ;
+          suffix[i] = postsum ;
       }
       
 
-        for(int i = length - 1 ; i > 0 ; i--){
+        for(int i = arr.length - 1 ; i > 0 ; i--){
           
           presum+=arr[i];
           
-          prefix[i] = sum ;
+          prefix[i] = presum ;
       }
     
         
