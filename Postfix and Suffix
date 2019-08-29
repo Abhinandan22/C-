@@ -1,0 +1,32 @@
+public class MyClass {
+    public static void main(String args[]) {
+     
+      int arr[] = [13,78,56,44,55,66,99];
+      
+      int postsum = 0;
+      
+      int presum = 0;
+      
+      int suffix [] = new int[arr.length];
+      
+      int prefix [] = new int[arr.length];
+      
+      for(int i = 0 ; i < length ; i++){
+          
+          postsum+=arr[i];
+          
+          suffix[i] = sum ;
+      }
+      
+
+        for(int i = length - 1 ; i > 0 ; i--){
+          
+          presum+=arr[i];
+          
+          prefix[i] = sum ;
+      }
+    
+        
+        
+    }
+}
