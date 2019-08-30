@@ -1,7 +1,25 @@
-public class MyClass {
-    public static void main(String args[]) {
+import java.util.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String args[]) throws IOException {
+    
+    //write your code here
+     Scanner sc = new Scanner(System.in);
      
-      int arr[] = {13,78,56,44,55,66,99};
+     int T = sc.nextInt();
+     
+     ;
+     while(T-- > 0) {
+     int length = sc.nextInt();
+     
+     int k = sc.nextInt();
+     
+     int arr[] = new int[length];
+     
+     for(int j = 0; j < length ; j++){
+       arr[j] = sc.nextInt();
+     }
       
       int postsum = 0;
       
@@ -25,8 +43,12 @@ public class MyClass {
           
           prefix[i] = presum ;
       }
-    
-        
-        
-    }
+ 
+    if(prefix[length-1]+suffix[0] < k )
+          count++;
+ 
+    long result = long long count%(Math.pow(10,9) + 7);
+    System.out.println(result);
+     }   
+     }
 }
