@@ -9,8 +9,8 @@ public class Main {
      
      int T = sc.nextInt();
      
-     ;
      while(T-- > 0) {
+    
      int length = sc.nextInt();
      
      int k = sc.nextInt();
@@ -29,7 +29,41 @@ public class Main {
       
       int prefix [] = new int[arr.length];
       
-      for(int i = 0 ; i < arr.length ; i++){
+      int binaryArr[] = new int[arr.length];
+     
+      for (int i = 0; i < length; i++) { 
+            if (arr[i] <= k) 
+                binaryArr[i] = 1; 
+            else
+                binaryArr[i] = 0; 
+        } 
+      
+       
+        for (int i = 0; i < length; i++) { 
+      
+            
+            if (binaryArr[i] == 1) { 
+                int j; 
+      
+                for (j = i + 1; j < length; j++)  
+                    if (binaryArr[j] != 1)  
+                        break; 
+      
+                
+                len = j - i; 
+      
+               
+                count += (len) * (len + 1) / 2; 
+      
+                 
+                i = j; 
+            } 
+        } 
+      
+         
+    } 
+     
+     for(int i = 0 ; i < arr.length ; i++){
           
           postsum+=arr[i];
           
@@ -49,6 +83,7 @@ public class Main {
  
     long result = long long count%(Math.pow(10,9) + 7);
     System.out.println(result);
-     }   
-     }
+      
+}
+  
 }
