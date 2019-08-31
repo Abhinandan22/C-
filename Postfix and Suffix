@@ -31,10 +31,16 @@ public class Main {
       
       int binaryArr[] = new int[arr.length];
      
+      
+      //Binary Search implementation
       for (int i = 0; i < length; i++) { 
+            
             if (arr[i] <= k) 
+               
                 binaryArr[i] = 1; 
+            
             else
+                
                 binaryArr[i] = 0; 
         } 
       
@@ -60,17 +66,20 @@ public class Main {
             } 
         } 
       
-         
-    } 
+      
+     } 
      
-     for(int i = 0 ; i < arr.length ; i++){
+     
+     
+     //suffix array sum
+      for(int i = 0 ; i < arr.length ; i++){
           
           postsum+=arr[i];
           
           suffix[i] = postsum ;
       }
       
-
+        //prefix array sum
         for(int i = arr.length - 1 ; i > 0 ; i--){
           
           presum+=arr[i];
@@ -78,10 +87,13 @@ public class Main {
           prefix[i] = presum ;
       }
  
+   
+   
+   
     if(prefix[length-1]+suffix[0] < k )
           count++;
  
-    long result = long long count%(Math.pow(10,9) + 7);
+    long result = long long (count%(Math.pow(10,9) + 7));
     System.out.println(result);
       
 }
