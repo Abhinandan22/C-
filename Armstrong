@@ -1,0 +1,53 @@
+import java.util.*;
+public class Solution {
+
+	public static void main(String[] args) {
+
+		/*  Read input as specified in the question.
+    		 * Print output as specified in the question.
+    		 */
+		Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        
+        Solution obj = new Solution();
+        
+        System.out.println(obj.Armstrong(x));        
+	}	
+
+  
+        boolean Armstrong(int x){
+            
+        int n = order(x);
+            
+            int temp=x, sum=0;
+            while(temp!=0){
+                int r = temp%10;
+                sum+=power(r,n);
+                temp/=10;
+            }
+             
+            return (sum ==x);
+        }
+
+
+           int order(int x){
+            int n = 0;
+            while(x!=0){
+                n++;
+                x/=10;
+            }
+            return n;
+        }
+
+        int power(int x,long y){
+            
+            if(y==0)
+                return 1;
+            if(y%2==0)
+                return power(x,y/2)*power(x,y/2);
+                return x*power(x,y/2)*power(x,y/2);
+        }
+    
+    
+}
+         
